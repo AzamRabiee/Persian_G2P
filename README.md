@@ -46,9 +46,9 @@ Please note that the pronunciation of the words that are already available comes
 The network architecture is actually a seq2seq GRU-RNN, in which the last hidden vector 
 of the encoder is fed to the decoder, as the below figure.
 
-![alt text](https://github.com/AzamRabiee/Persian_G2P/imgs/network.png)
+![network architecture, seq2seq](https://github.com/AzamRabiee/Persian_G2P/blob/master/imgs/network.png)
 
-You may take a look at the `hparams.py` for the default network parameters. 
+You may take a look at the `[hparams.py](https://github.com/AzamRabiee/Persian_G2P/blob/master/hparams.py)` for the default network parameters. 
 The following command starts the training process, making a log folder, naming 
 `logs-<run-name>`, for storing checkpoints, results, as well as logs of loss and PERs. 
    ```
