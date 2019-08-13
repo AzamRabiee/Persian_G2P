@@ -9,7 +9,7 @@ languages, as Persian words are not always written in the way that they are pron
 Thanks to the useful repositories that are helpful in surviving Persian language and making this repo: 
 - [Tihu dictionary](https://github.com/tihu-nlp/tihudict) is a Persian pronunciation dictionary, useful for g2p mapping. 
 However, it does not contain all the words. 
-Thus, in this repo a sequence-to-sequence network is trained on the tihu dictionary to handle OOVs. 
+Thus, in this repo a sequence-to-sequence network with cross-entropy loss is trained on the tihu dictionary to handle OOVs. 
 -  [hazm](https://github.com/sobhe/hazm) is used for the Persian text pre-processing and normalization. It was helpful 
 in Word tokenizing and text cleaning, e.g. replacing ي and ك with ی and ک , respectively.
 -  [num2fawords](https://github.com/5j9/num2fawords) package converts numbers to Persian words, 
@@ -44,13 +44,13 @@ Please note that the pronunciation of the words that are already available comes
 
 ### training model using alternative word-pronunciation dictionary
 The network architecture is actually a seq2seq GRU-RNN, in which the last hidden vector 
-of the encoder is fed to the decoder, as the below figure.
+of the encoder is fed to the decoder, as the below figure.  
 
 ![network architecture, seq2seq](https://github.com/AzamRabiee/Persian_G2P/blob/master/imgs/network.png)
 
-You may take a look at the `[hparams.py](https://github.com/AzamRabiee/Persian_G2P/blob/master/hparams.py)` for the default network parameters. 
+You may take a look at the [hparams.py](https://github.com/AzamRabiee/Persian_G2P/blob/master/hparams.py) for default network parameters. 
 The following command starts the training process, making a log folder, naming 
-`logs-<run-name>`, for storing checkpoints, results, as well as logs of loss and PERs. 
+`logs-<run-name>`, for storing checkpoint, results, as well as logs of loss and PERs. 
    ```
     python train.py --name <run-name> --dictionary <path-to-the-word-pronunciation-dictionary>
    ```
