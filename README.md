@@ -1,6 +1,6 @@
 # Persian_g2p: A seq-to-seq model for Persian (Farsi) Grapheme To Phoneme mapping
 
-* forked from [g2pE](https://github.com/Kyubyong/g2p), training uses pytorch; while in the inference, numpy is used.  
+* forked from [g2pE](https://github.com/Kyubyong/g2p), training is implemented using pytorch; but numpy is used in the inference.  
 
 Persian_g2p converts Persian (Farsi) graphemes (spelling) to phonemes (pronunciation), which can be used as the 
 pre-processing step for text-to-speech (TTS). Persian language, alike English, is in the category of complex
@@ -54,7 +54,10 @@ The following command starts the training process, making a log folder, naming
    ```
     python train.py --name <run-name> --dictionary <path-to-the-word-pronunciation-dictionary>
    ```
- 
+## TODO:
+- improving the performance; currently the PER is 3.9% on test set but not enough.
+- adding informal words (slang, such as چاکرتیم- واس ماس and broken language, e.g. نمیشه- میرم- بگم-همشون) to the dictionary
+
 ## References
 
 If you use this code for research, please cite:
