@@ -3,4 +3,4 @@ numpy==1.17.0
 Distance==0.1.3
 num2fawords==1.1
 numpy==1.17.0
-torch==1.2.0
+torch==2.2.0
